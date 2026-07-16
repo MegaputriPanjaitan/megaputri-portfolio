@@ -60,7 +60,7 @@ const experiences = [
     description:
       "Graduated Cum Laude with a Bachelor's degree in Computer Science (GPA 3.89/4.00). Developed practical skills in information systems, data analytics, software quality assurance, and web application development through academic projects, internships, and research.",
 
-    image: "/experience/graduation.jpg"
+    image: "/organization/graduation.jpg"
   },
   {
     category: "Internship",
@@ -71,7 +71,7 @@ const experiences = [
     badge: "Data Monitoring",
     description:
       "Supported internship program monitoring through participant data validation, dashboard reporting, and the development of a web-based internship performance monitoring system to improve reporting efficiency.",
-    image: "/experience/bpjs.png"
+    image: "/organization/bpjs.png"
   },
   {
     category: "Internship",
@@ -328,77 +328,85 @@ function ExperienceSection() {
           {experiences.map((item, index) => (
             <article
               key={`${item.title}-${item.organization}`}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07] hover:shadow-[0_20px_60px_rgba(59,130,246,0.14)]"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-8 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
             >
-              <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl transition duration-500 group-hover:bg-blue-300/20" />
+              <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
 
-              <div className="relative grid gap-8 lg:grid-cols-[1fr_320px]">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200 shadow-lg shadow-blue-950/20">
-                  0{index + 1}
+              {/* Number */}
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200">
+                0{index + 1}
+              </div>
+
+              {/* Header */}
+              <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
+
+                <div>
+
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                    {item.category}
+                  </p>
+
+                  <h3 className="text-2xl font-bold text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-slate-300">
+                    {item.organization} • {item.location}
+                  </p>
+
                 </div>
 
-                <div className="flex-1">
-                  <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      {item.image && (
-                        <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="h-full w-full object-cover transition duration-300 hover:scale-105"
-                          />
-                        </div>
-                      )}
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-                        {item.category}
-                      </p>
-                      <h3 className="text-xl font-bold text-white md:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-sm font-medium text-slate-300">
-                        {item.organization} • {item.location}
-                      </p>
-                    </div>
+                <div className="flex flex-col gap-2">
 
-                    <div className="flex flex-col items-start gap-2 md:items-end">
-                      <span className="rounded-full border border-white/10 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-slate-300">
-                        {item.period}
-                      </span>
-                      <span className="rounded-full border border-blue-300/30 bg-blue-300/10 px-3 py-1 text-xs font-semibold text-blue-100">
-                        {item.badge}
-                      </span>
-                    </div>
+                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-1 text-xs text-slate-300">
+                    {item.period}
+                  </span>
+
+                  <span className="rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-xs text-blue-100">
+                    {item.badge}
+                  </span>
+
+                </div>
+
+              </div>
+
+              {/* Content */}
+              {item.image ? (
+
+                <div className="flex flex-col lg:flex-row gap-8 items-center">
+
+                  <div className="flex-1">
+
+                    <p className="leading-8 text-slate-300">
+                      {item.description}
+                    </p>
+
                   </div>
 
-                  <p className="text-sm leading-7 text-slate-300">
+                  <div className="w-full lg:w-80 shrink-0">
+
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full rounded-2xl object-cover shadow-lg"
+                    />
+
+                  </div>
+
+                </div>
+
+              ) : (
+
+                <div className="mx-auto max-w-4xl">
+
+                  <p className="leading-8 text-slate-300 text-center">
                     {item.description}
                   </p>
 
-                  <div className={`mt-6 ${item.image ? "grid lg:grid-cols-[1fr_320px] gap-8 items-center" : "flex justify-center"}`}>
-
-                    <div className={item.image ? "" : "max-w-3xl"}>
-
-                      <p className="text-base leading-8 text-slate-300">
-                        {item.description}
-                      </p>
-
-                    </div>
-
-                    {item.image && (
-                      <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40">
-
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="h-72 w-full object-cover transition duration-300 hover:scale-105"
-                        />
-
-                      </div>
-                    )}
-
-                  </div>
                 </div>
-              </div>
+
+              )}
+
             </article>
           ))}
         </div>
