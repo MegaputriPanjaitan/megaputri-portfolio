@@ -4,7 +4,7 @@ const profile = {
   name: "Megaputri Nathalina",
   headline: "Computer Science Graduate",
   summary:
-    "Computer Science graduate with hands-on experience in Python desktop development, backend development, cybersecurity-oriented thesis work, and manual UI/API testing. Interested in digital banking technology, secure software development, database systems, and IT development programs.",
+    "Computer Science graduate with practical experience in information systems, data analysis, software quality assurance, and administrative process digitalization through internships and academic projects. Proficient in Python, SQL, Power BI, and manual software testing, with strong analytical, problem-solving, and teamwork skills. Interested in contributing to technology-driven organizations through data-driven decision making and digital transformation initiatives.",
   email: "megaputripanjaitan@gmail.com",
   linkedin: "https://www.linkedin.com/in/megaputri-panjaitan/",
   github: "https://github.com/MegaputriPanjaitan",
@@ -58,26 +58,9 @@ const experiences = [
     period: "Aug 2022 - Apr 2026",
     badge: "GPA 3.89 / 4.00",
     description:
-      "Graduated with a Bachelor's degree in Computer Science (Cum Laude, GPA 3.89) with academic and practical experience in information systems, data analysis, software quality assurance, and administrative process digitalization through internships, research, and real-world projects.",
+      "Graduated Cum Laude with a Bachelor's degree in Computer Science (GPA 3.89/4.00). Developed practical skills in information systems, data analytics, software quality assurance, and web application development through academic projects, internships, and research.",
 
-    points: [
-      "Built practical projects involving information systems, data analytics, dashboard visualization, database management, and software testing using Python, SQL, and Power BI.",
-      "Completed internships in the public and banking sectors, contributing to data validation, performance monitoring, reporting, and the development of a web-based internship performance monitoring system.",
-    ],
-  },
-  {
-    category: "Internship",
-    title: "Administrative Intern",
-    organization: "BNI KCP Citra Garden Medan",
-    location: "Medan, Indonesia",
-    period: "Jul 2025",
-    badge: "Banking Operations",
-    description:
-      "Assisted daily banking operational activities and gained exposure to structured financial-service administration and customer data workflows.",
-    points: [
-      "Supported document processing, data entry, account registration support, and reporting activities.",
-      "Maintained customer data accuracy while learning practical banking workflows and administrative processes.",
-    ],
+    image: "/experience/graduation.jpg"
   },
   {
     category: "Internship",
@@ -87,12 +70,21 @@ const experiences = [
     period: "Mar 2025 - May 2025",
     badge: "Data Monitoring",
     description:
-      "Monitored participant performance data and organized datasets to support administrative reporting and data-driven supervision.",
-    points: [
-      "Managed performance data of hundreds of internship participants for reporting needs.",
-      "Developed weekly performance dashboards to track participant progress and support monitoring activities.",
-    ],
+      "Supported internship program monitoring through participant data validation, dashboard reporting, and the development of a web-based internship performance monitoring system to improve reporting efficiency.",
+    image: "/experience/bpjs.png"
   },
+  {
+    category: "Internship",
+    title: "Administrative Intern",
+    organization: "BNI KCP Citra Garden Medan",
+    location: "Medan, Indonesia",
+    period: "Jul 2025",
+    badge: "Banking Operations",
+    description:
+      "Supported daily banking operations including document processing, customer data administration, account registration support, and reporting while gaining hands-on experience in banking workflows.",
+     image: null,
+  },
+  
 ];
 
 const courses = [
@@ -155,18 +147,41 @@ const courses = [
 
 const organizations = [
   {
-    title: "Staff of Advocacy and Student Welfare Division",
-    organization: "BEM FASILKOM-TI",
-    period: "Oct 2024 - Nov 2025",
+    title: "Student Executive Board Member",
+    organization: "BEM FASILKOM-TI USU",
+    period: "2024 - 2025",
     description:
-      "Coordinated student programs and activities while developing communication, teamwork, and stakeholder coordination skills.",
+      "Actively contributed to student governance activities by organizing campus programs, collaborating with multidisciplinary teams, and strengthening leadership, communication, and teamwork skills.",
+
+    certificates: [
+      {
+        thumbnail: "/organization/bem-preview.png",
+        pdf: "/organization/bem.pdf",
+      },
+    ],
   },
+
   {
-    title: "Event Committees",
-    organization: "IMILKOM and BEM",
+    title: "Committee Experience",
+    organization: "Faculty Events",
     period: "2022 - 2024",
     description:
-      "Supported campus event execution and strengthened organizational and time management skills.",
+      "Served as a committee member in several faculty events, supporting event planning, coordination, administration, and execution while developing collaboration, adaptability, and problem-solving skills.",
+
+    certificates: [
+      {
+        thumbnail: "/organization/pkkmb-preview.jpg",
+        pdf: "/organization/pkkmb.jpg",
+      },
+      {
+        thumbnail: "/organization/csa-preview.png",
+        pdf: "/organization/csa.png",
+      },
+      {
+        thumbnail: "/organization/porseni-preview.png",
+        pdf: "/organization/porseni.png",
+      },
+    ],
   },
 ];
 
@@ -317,7 +332,7 @@ function ExperienceSection() {
             >
               <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl transition duration-500 group-hover:bg-blue-300/20" />
 
-              <div className="relative flex flex-col gap-5 md:flex-row md:items-start">
+              <div className="relative grid gap-8 lg:grid-cols-[1fr_320px]">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200 shadow-lg shadow-blue-950/20">
                   0{index + 1}
                 </div>
@@ -325,6 +340,15 @@ function ExperienceSection() {
                 <div className="flex-1">
                   <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
                     <div>
+                      {item.image && (
+                        <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="h-full w-full object-cover transition duration-300 hover:scale-105"
+                          />
+                        </div>
+                      )}
                       <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
                         {item.category}
                       </p>
@@ -350,14 +374,29 @@ function ExperienceSection() {
                     {item.description}
                   </p>
 
-                  <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-300 md:grid-cols-2">
-                    {item.points.map((point) => (
-                      <li key={point} className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-300" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={`mt-6 ${item.image ? "grid lg:grid-cols-[1fr_320px] gap-8 items-center" : "flex justify-center"}`}>
+
+                    <div className={item.image ? "" : "max-w-3xl"}>
+
+                      <p className="text-base leading-8 text-slate-300">
+                        {item.description}
+                      </p>
+
+                    </div>
+
+                    {item.image && (
+                      <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40">
+
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-72 w-full object-cover transition duration-300 hover:scale-105"
+                        />
+
+                      </div>
+                    )}
+
+                  </div>
                 </div>
               </div>
             </article>
@@ -441,24 +480,97 @@ function ExperienceSection() {
             </div>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:-translate-y-1 hover:border-blue-300/30">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-              Organization
-            </p>
-            <h3 className="text-xl font-bold text-white">Campus involvement</h3>
-            <div className="mt-5 space-y-4">
-              {organizations.map((item) => (
-                <div key={`${item.title}-${item.period}`} className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                  <p className="text-sm font-bold text-white">{item.title}</p>
-                  <p className="mt-1 text-xs font-medium text-blue-200">
-                    {item.organization} • {item.period}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
-                    {item.description}
-                  </p>
+        <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-8 shadow-2xl shadow-slate-950/25">
+
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+            Leadership & Organization
+          </p>
+
+          <h3 className="text-2xl font-bold text-white">
+            Campus Leadership Experience
+          </h3>
+
+          <p className="mt-2 text-sm leading-6 text-slate-400">
+            Organizational and committee experiences that strengthened leadership,
+            teamwork, communication, and project coordination skills throughout my
+            university journey.
+          </p>
+
+          <div className="mt-8 space-y-8">
+
+            {organizations.map((item) => (
+
+              <div
+                key={item.title}
+                className="rounded-3xl border border-white/10 bg-slate-950/40 p-6 transition-all duration-300 hover:border-blue-400/40"
+              >
+
+                <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+
+                  <div>
+
+                    <h4 className="text-xl font-semibold text-white">
+                      {item.title}
+                    </h4>
+
+                    <p className="mt-2 text-sm font-medium text-blue-300">
+                      {item.organization}
+                    </p>
+
+                  </div>
+
+                  <span className="rounded-full bg-blue-500/15 px-4 py-1 text-xs font-medium text-blue-200">
+                    {item.period}
+                  </span>
+
                 </div>
-              ))}
-            </div>
+
+                <p className="mt-5 text-sm leading-7 text-slate-300">
+                  {item.description}
+                </p>
+
+                <div className="mt-6">
+
+                  <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                    Certificates
+                  </h5>
+
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+                    {item.certificates.map((certificate, index) => (
+
+                      <a
+                        key={index}
+                        href={certificate.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+                      >
+
+                        <div className="flex h-60 items-center justify-center p-4">
+
+                          <img
+                            src={certificate.thumbnail}
+                            alt={`${item.title} Certificate ${index + 1}`}
+                            className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                          />
+
+                        </div>
+
+                      </a>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
         </div>
         {/* </aside> */}
       </div>
@@ -796,7 +908,7 @@ export default function App() {
         </div>
       </section>
 
-      <section
+      {/* <section
         id="about"
         className="relative z-10 border-y border-white/10 bg-white/[0.03] px-6 py-20"
       >
@@ -827,7 +939,7 @@ export default function App() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="skills" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
         <SectionTitle
