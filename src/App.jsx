@@ -327,87 +327,90 @@ function ExperienceSection() {
         <div className="space-y-5">
           {experiences.map((item, index) => (
             <article
-              key={`${item.title}-${item.organization}`}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-8 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
-            >
-              <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
+                key={`${item.title}-${item.organization}`}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-8 py-7 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
+              >
+                {/* Background Glow */}
+                <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl transition duration-500 group-hover:bg-blue-300/20" />
 
-              {/* Number */}
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200">
-                0{index + 1}
-              </div>
-
-              {/* Header */}
-              <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-
-                <div>
-
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-                    {item.category}
-                  </p>
-
-                  <h3 className="text-2xl font-bold text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-2 text-slate-300">
-                    {item.organization} • {item.location}
-                  </p>
-
+                {/* Number */}
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200">
+                  0{index + 1}
                 </div>
 
-                <div className="flex flex-col gap-2">
+                {/* Header */}
+                <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
 
-                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-1 text-xs text-slate-300">
+                  <div>
+
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                      {item.category}
+                    </p>
+
+                    <h3 className="text-3xl font-bold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-lg text-slate-300">
+                      {item.organization} • {item.location}
+                    </p>
+
+                    {/* GPA pindah ke kiri */}
+                    {item.badge && (
+                      <div className="mt-3 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-sm font-medium text-blue-200">
+                        🎓 {item.badge}
+                      </div>
+                    )}
+
+                  </div>
+
+                  {/* Period tetap kanan */}
+                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-sm font-medium text-slate-300">
                     {item.period}
                   </span>
 
-                  <span className="rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-xs text-blue-100">
-                    {item.badge}
-                  </span>
-
                 </div>
 
-              </div>
+                {/* Content */}
+                {item.image ? (
 
-              {/* Content */}
-              {item.image ? (
+                  <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-center">
 
-                <div className="flex flex-col lg:flex-row gap-8 items-center">
+                    {/* Description */}
+                    <div className="flex-1">
 
-                  <div className="flex-1">
+                      <p className="text-lg leading-9 text-slate-300">
+                        {item.description}
+                      </p>
 
-                    <p className="leading-8 text-slate-300">
+                    </div>
+
+                    {/* Image */}
+                    <div className="w-full lg:w-[340px] shrink-0">
+
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-[260px] w-full rounded-2xl object-cover border border-white/10 shadow-xl transition duration-300 group-hover:scale-[1.02]"
+                      />
+
+                    </div>
+
+                  </div>
+
+                ) : (
+
+                  <div className="mx-auto max-w-4xl">
+
+                    <p className="text-center text-lg leading-9 text-slate-300">
                       {item.description}
                     </p>
 
                   </div>
 
-                  <div className="w-full lg:w-80 shrink-0">
+                )}
 
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full rounded-2xl object-cover shadow-lg"
-                    />
-
-                  </div>
-
-                </div>
-
-              ) : (
-
-                <div className="mx-auto max-w-4xl">
-
-                  <p className="leading-8 text-slate-300 text-center">
-                    {item.description}
-                  </p>
-
-                </div>
-
-              )}
-
-            </article>
+              </article>
           ))}
         </div>
 
@@ -427,7 +430,7 @@ function ExperienceSection() {
               and workplace skills.
             </p>
 
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {courses.map((course) => (
                 <div
                   key={course.title}
@@ -439,7 +442,7 @@ function ExperienceSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className="flex h-60 items-center justify-center bg-white p-4">
+                    <div className="flex h-44 items-center justify-center bg-white p-3">
                       <img
                         src={course.thumbnail}
                         alt={course.title}
@@ -449,12 +452,13 @@ function ExperienceSection() {
                   </a>
 
                   {/* Content */}
-                  <div className="p-5">
-                    <h4 className="text-lg font-semibold text-white">
+                  <div className="p-4">
+
+                    <h4 className="line-clamp-2 text-base font-semibold leading-6 text-white">
                       {course.title}
                     </h4>
 
-                    <div className="mt-2 flex items-center justify-between">
+                    <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm font-medium text-blue-300">
                         {course.provider}
                       </span>
@@ -464,24 +468,16 @@ function ExperienceSection() {
                       </span>
                     </div>
 
-                    <p className="mt-4 text-sm leading-6 text-slate-300">
+                    <p className="mt-4 line-clamp-3 text-sm leading-6 text-slate-300">
                       {course.description}
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
-                      <span className="text-xs text-slate-400">
-                        PDF Certificate Available
-                      </span>
-
-                      <a
-                        href={course.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
-                      >
-                        View Certificate ↗
-                      </a>
+                    <div className="mt-5 border-t border-white/10 pt-3">
+                      <p className="text-xs text-slate-400">
+                        Click the certificate preview to open the full document.
+                      </p>
                     </div>
+
                   </div>
                 </div>
               ))}
