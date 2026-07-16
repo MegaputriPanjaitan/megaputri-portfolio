@@ -14,30 +14,39 @@ const profile = {
 
 const skills = [
   {
-    title: "Programming & Development",
-    items: ["Python", "JavaScript", "SQL", "Kotlin Basics", "Git", "GitHub"],
-  },
+  title: "Data Analytics & Information Systems",
+  items: [
+    "Python",
+    "SQL",
+    "Power BI",
+    "Microsoft Excel",
+    "Data Analysis",
+    "Data Cleaning",
+    "Dashboard Development",
+    "Database Design",
+    "System Analysis",
+    "Requirement Analysis",
+  ],
+},
   {
-    title: "Frameworks & Tools",
-    items: [
-      "PySide6",
-      "SQLite",
-      "Firebase",
-      "Google Cloud Storage",
-      "Postman",
-      "Trello",
-    ],
-  },
-  {
-    title: "Focus Areas",
-    items: [
-      "Desktop Applications",
-      "Backend Development",
-      "Database Systems",
-      "Cybersecurity",
-      "QA Testing",
-    ],
-  },
+  title: "Software Testing",
+  items: [
+    "Manual Testing",
+    "Test Case Design",
+    "API Testing",
+    "Bug Reporting",
+    "Postman",
+    "Trello",
+  ],
+},
+{
+  title: "Development Tools",
+  items: [
+    "Git",
+    "GitHub",
+    "Visual Studio Code",
+  ],
+}
 ];
 
 const experiences = [
@@ -49,10 +58,11 @@ const experiences = [
     period: "Aug 2022 - Apr 2026",
     badge: "GPA 3.89 / 4.00",
     description:
-      "Completed a Computer Science degree with strong academic performance and practical exposure to software development, database systems, cloud tools, cybersecurity-related thesis work, and software quality assurance.",
+      "Graduated with a Bachelor's degree in Computer Science (Cum Laude, GPA 3.89) with academic and practical experience in information systems, data analysis, software quality assurance, and administrative process digitalization through internships, research, and real-world projects.",
+
     points: [
-      "Focused on programming, application development, database fundamentals, and system-oriented problem solving.",
-      "Developed academic and practical projects involving desktop applications, mobile/cloud systems, cybersecurity, and QA testing.",
+      "Built practical projects involving information systems, data analytics, dashboard visualization, database management, and software testing using Python, SQL, and Power BI.",
+      "Completed internships in the public and banking sectors, contributing to data validation, performance monitoring, reporting, and the development of a web-based internship performance monitoring system.",
     ],
   },
   {
@@ -71,7 +81,7 @@ const experiences = [
   },
   {
     category: "Internship",
-    title: "Program Monitoring Intern",
+    title: "IT Program Monitoring Intern",
     organization: "BPJS Ketenagakerjaan Medan Kota",
     location: "Medan, Indonesia",
     period: "Mar 2025 - May 2025",
@@ -86,10 +96,61 @@ const experiences = [
 ];
 
 const courses = [
-  "Quality Assurance Introduction by MySkill",
-  "Intro to Software Engineering by RevoU",
-  "Dicoding Structured Query Language Basics Class",
-  "Dicoding Python Programming Class",
+  {
+    title: "Dasar Microsoft Excel Administrasi Perkantoran",
+    provider: "Yureka Education Center",
+    year: "2026",
+    thumbnail: "/certificates/excel-preview.png", // Halaman pertama saja
+    pdf: "/certificates/excel-yec.pdf",               // File PDF lengkap
+    description:
+      "Learned Microsoft Excel fundamentals for administrative tasks, including data management, formulas, and reporting.",
+  },
+  {
+    title: "Basic English for Work",
+    provider: "Yureka Education Center",
+    year: "2026",
+    thumbnail: "/certificates/english-preview.png", // Halaman pertama saja
+    pdf: "/certificates/english-yec.pdf",               // File PDF lengkap
+    description:
+      "Completed workplace English training focusing on communication and professional interaction.",
+  },
+  {
+    title: "Belajar Dasar Data Science",
+    provider: "Dicoding",
+    year: "2024",
+    thumbnail: "/certificates/data-preview.png", // Halaman pertama saja
+    pdf: "/certificates/data-dicoding.pdf",               // File PDF lengkap
+    description:
+      "Study the fundamental concepts of data science, including an introduction to the data analysis process, data processing, and data visualization",
+  },
+  {
+    title: "Structured Query Language (SQL) Basics",
+    provider: "Dicoding",
+    year: "2024",
+    thumbnail: "/certificates/sql-preview.png", // Halaman pertama saja
+    pdf: "/certificates/sql-dicoding.pdf",               // File PDF lengkap
+    description:
+      "Learned SQL fundamentals including querying, filtering, joining tables, and database concepts.",
+  },
+  {
+    title: "Quality Assurance Introduction",
+    provider: "MySkill",
+    year: "2026",
+    thumbnail: "/certificates/qa-preview.png", // Halaman pertama saja
+    pdf: "/certificates/qa-myskill.pdf",               // File PDF lengkap
+    description:
+      "Learned software testing fundamentals, SDLC, STLC, and quality assurance concepts.",
+  },
+  {
+    title: "Python Programming Basics",
+    provider: "Dicoding",
+    year: "2024",
+    thumbnail: "/certificates/python-preview.png", // Halaman pertama saja
+    pdf: "/certificates/python-dicoding.pdf",               // File PDF lengkap
+    description:
+      "Completed Python programming fundamentals including variables, functions, loops, and object-oriented programming.",
+  },
+  
 ];
 
 const organizations = [
@@ -111,6 +172,60 @@ const organizations = [
 
 const projects = [
   {
+  title: "North Sumatra Socioeconomic Information System",
+  role: "Data Analyst & System Developer | Independent Project | 2026",
+  layout: "desktop",
+  image: "/projects/north-sumatra-information-system.png",
+  tags: [
+    "Python",
+    "SQL",
+    "Power BI",
+    "ETL",
+    "Data Analysis",
+    "BPS Dataset",
+    "Dashboard",
+    "Business Intelligence",
+  ],
+  description:
+    "An end-to-end socioeconomic information system built using official Statistics Indonesia (BPS) datasets to analyze and visualize key development indicators across regencies and cities in North Sumatra. The project integrates ETL processes, relational database design, and interactive Power BI dashboards to support data-driven decision making.",
+  highlights: [
+    "Collected and integrated official BPS datasets covering population, education, poverty, unemployment, Human Development Index (HDI), and regional GDP indicators.",
+    "Performed data cleaning, transformation, and validation using Python before storing the processed data in a relational SQL database.",
+    "Designed interactive Power BI dashboards featuring KPI cards, trend analysis, regional comparisons, and district-level filtering for socioeconomic monitoring.",
+    "Produced analytical insights and technical documentation including database schema, ETL workflow, and system design to simulate a real-world government information system project.",
+  ],
+},
+{
+    title: "URLDetector Application",
+    role: "Thesis Project / Developer | Medan, Indonesia | 2026",
+    layout: "mobile",
+    image: "/projects/url-detector.png",
+    tags: ["Cybersecurity", "URL Analysis", "Validation", "Thesis Project"],
+    description:
+      "A thesis-based application to detect potentially malicious URLs using URL string characteristics and support safer browsing awareness.",
+    highlights: [
+      "Developed the workflow from URL input to detection result output.",
+      "Applied validation-oriented system design for security-related use cases.",
+      "Strengthened cybersecurity fundamentals through malicious URL detection research.",
+      "Documented the application as part of an academic thesis project.",
+    ],
+  },
+  {
+    title: "QA Testing Projects - SauceDemo & Automation Exercise",
+    role: "Independent Projects | 2025",
+    layout: "desktop",
+    image: "/projects/qa-testing.png",
+    tags: ["Manual Testing", "API Testing", "Postman", "Trello", "Test Cases"],
+    description:
+      "Manual UI and API testing projects covering authentication, product/search, cart, checkout, subscription, contact, and selected API modules.",
+    highlights: [
+      "Designed and executed 50 manual UI/API test cases.",
+      "Prepared test plans, test scenarios, defect logs, and final test summary reports.",
+      "Used Trello for defect tracking and Postman for API testing notes.",
+      "Practiced functional testing, negative testing, API validation, and structured QA documentation.",
+    ],
+  },
+  {
     title: "Workshop Cashier & Inventory System",
     role: "Python Developer | Client Project | 2026 - Ongoing",
     layout: "desktop",
@@ -130,57 +245,6 @@ const projects = [
       "Built product, category, stock-in, and cashier transaction workflows.",
       "Implemented sales validation, discount calculation, change calculation, and low-stock warning.",
       "Prepared the application for executable packaging using PyInstaller.",
-    ],
-  },
-  {
-    title: "URLDetector Application",
-    role: "Thesis Project / Developer | Medan, Indonesia | 2026",
-    layout: "mobile",
-    image: "/projects/url-detector.png",
-    tags: ["Cybersecurity", "URL Analysis", "Validation", "Thesis Project"],
-    description:
-      "A thesis-based application to detect potentially malicious URLs using URL string characteristics and support safer browsing awareness.",
-    highlights: [
-      "Developed the workflow from URL input to detection result output.",
-      "Applied validation-oriented system design for security-related use cases.",
-      "Strengthened cybersecurity fundamentals through malicious URL detection research.",
-      "Documented the application as part of an academic thesis project.",
-    ],
-  },
-  {
-    title: "PETKU Application",
-    role: "Backend Programmer | Medan, Indonesia | Sep 2024 - Dec 2024",
-    layout: "mobile",
-    image: "/projects/petku.png",
-    tags: [
-      "Firebase",
-      "Authentication",
-      "Realtime Database",
-      "Google Cloud Storage",
-      "Mobile App",
-    ],
-    description:
-      "A mobile pet-care application for pet profiles, care schedules, health records, nearby clinic information, appointment scheduling, reminders, and pet-care guidance.",
-    highlights: [
-      "Implemented backend-related features using Firebase Realtime Database and Authentication.",
-      "Integrated Google Cloud Storage for application data and media support.",
-      "Collaborated with Android/Kotlin developers and Figma-based UI/UX flows.",
-      "Supported backend data flow for user, pet, schedule, and appointment features.",
-    ],
-  },
-  {
-    title: "QA Testing Projects - SauceDemo & Automation Exercise",
-    role: "Independent Projects | 2025",
-    layout: "desktop",
-    image: "/projects/qa-testing.png",
-    tags: ["Manual Testing", "API Testing", "Postman", "Trello", "Test Cases"],
-    description:
-      "Manual UI and API testing projects covering authentication, product/search, cart, checkout, subscription, contact, and selected API modules.",
-    highlights: [
-      "Designed and executed 50 manual UI/API test cases.",
-      "Prepared test plans, test scenarios, defect logs, and final test summary reports.",
-      "Used Trello for defect tracking and Postman for API testing notes.",
-      "Practiced functional testing, negative testing, API validation, and structured QA documentation.",
     ],
   },
 ];
@@ -301,14 +365,78 @@ function ExperienceSection() {
         </div>
 
         <aside className="space-y-5">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:-translate-y-1 hover:border-blue-300/30">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
               Courses & Certifications
             </p>
-            <h3 className="text-xl font-bold text-white">Continuous learning</h3>
-            <div className="mt-5 flex flex-wrap gap-2">
+
+            <h3 className="text-xl font-bold text-white">
+              Continuous Learning
+            </h3>
+
+            <p className="mt-2 text-sm leading-6 text-slate-400">
+              Professional training and certifications completed to strengthen my
+              knowledge in data analytics, software development, quality assurance,
+              and workplace skills.
+            </p>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {courses.map((course) => (
-                <Pill key={course}>{course}</Pill>
+                <div
+                  key={course.title}
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:shadow-xl hover:shadow-blue-500/10"
+                >
+                  {/* Certificate Preview */}
+                  <a
+                    href={course.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="flex h-72 items-center justify-center bg-white p-4">
+                      <img
+                        src={course.thumbnail}
+                        alt={course.title}
+                        className="h-full w-full object-contain transition duration-300 hover:scale-105"
+                      />
+                    </div>
+                  </a>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <h4 className="text-lg font-semibold text-white">
+                      {course.title}
+                    </h4>
+
+                    <div className="mt-2 flex items-center justify-between">
+                      <span className="text-sm font-medium text-blue-300">
+                        {course.provider}
+                      </span>
+
+                      <span className="rounded-full bg-blue-500/15 px-3 py-1 text-xs font-medium text-blue-200">
+                        {course.year}
+                      </span>
+                    </div>
+
+                    <p className="mt-4 text-sm leading-6 text-slate-300">
+                      {course.description}
+                    </p>
+
+                    <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+                      <span className="text-xs text-slate-400">
+                        PDF Certificate Available
+                      </span>
+
+                      <a
+                        href={course.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+                      >
+                        View Certificate ↗
+                      </a>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
