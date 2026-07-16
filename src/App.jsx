@@ -308,7 +308,7 @@ function ExperienceSection() {
         description="A summary of academic background, internship experience, certifications, and organizational activities aligned with IT development, banking operations, data monitoring, and software quality."
       />
 
-      <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+      <div className="mx-auto max-w-7xl space-y-8">
         <div className="space-y-5">
           {experiences.map((item, index) => (
             <article
@@ -364,8 +364,8 @@ function ExperienceSection() {
           ))}
         </div>
 
-        <aside className="space-y-5">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
+        {/* <aside className="space-y-5"> */}
+        <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
               Courses & Certifications
             </p>
@@ -392,7 +392,7 @@ function ExperienceSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className="flex h-72 items-center justify-center bg-white p-4">
+                    <div className="flex h-60 items-center justify-center bg-white p-4">
                       <img
                         src={course.thumbnail}
                         alt={course.title}
@@ -439,9 +439,9 @@ function ExperienceSection() {
                 </div>
               ))}
             </div>
-          </div>
+        </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:-translate-y-1 hover:border-blue-300/30">
+        <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:-translate-y-1 hover:border-blue-300/30">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
               Organization
             </p>
@@ -459,8 +459,8 @@ function ExperienceSection() {
                 </div>
               ))}
             </div>
-          </div>
-        </aside>
+        </div>
+        {/* </aside> */}
       </div>
     </section>
   );
