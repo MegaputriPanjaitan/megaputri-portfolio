@@ -21,11 +21,8 @@ const skills = [
     "Power BI",
     "Microsoft Excel",
     "Data Analysis",
-    "Data Cleaning",
     "Dashboard Development",
     "Database Design",
-    "System Analysis",
-    "Requirement Analysis",
   ],
 },
   {
@@ -33,6 +30,7 @@ const skills = [
   items: [
     "Manual Testing",
     "Test Case Design",
+    "Test Document",
     "API Testing",
     "Bug Reporting",
     "Postman",
@@ -45,6 +43,8 @@ const skills = [
     "Git",
     "GitHub",
     "Visual Studio Code",
+    "Android Studio",
+    "Google Colab"
   ],
 }
 ];
@@ -57,6 +57,7 @@ const experiences = [
     location: "Medan, Indonesia",
     period: "Aug 2022 - Apr 2026",
     badge: "GPA 3.89 / 4.00",
+    points: [],
     description:
       "Graduated Cum Laude with a Bachelor's degree in Computer Science (GPA 3.89/4.00). Developed practical skills in information systems, data analytics, software quality assurance, and web application development through academic projects, internships, and research.",
 
@@ -69,6 +70,7 @@ const experiences = [
     location: "Medan, Indonesia",
     period: "Mar 2025 - May 2025",
     badge: "Data Monitoring",
+    points: [],
     description:
       "Supported internship program monitoring through participant data validation, dashboard reporting, and the development of a web-based internship performance monitoring system to improve reporting efficiency.",
     image: "/organization/bpjs.png"
@@ -80,6 +82,12 @@ const experiences = [
     location: "Medan, Indonesia",
     period: "Jul 2025",
     badge: "Banking Operations",
+    points: [
+      "Supported customer account registration and document verification processes.",
+      "Performed data entry and maintained customer information accuracy.",
+      "Assisted daily banking administrative operations and reporting.",
+      "Learned banking operational workflows and customer service procedures.",
+    ],
     description:
       "Supported daily banking operations including document processing, customer data administration, account registration support, and reporting while gaining hands-on experience in banking workflows.",
      image: null,
@@ -210,24 +218,9 @@ const projects = [
     "Produced analytical insights and technical documentation including database schema, ETL workflow, and system design to simulate a real-world government information system project.",
   ],
 },
-{
-    title: "URLDetector Application",
-    role: "Thesis Project / Developer | Medan, Indonesia | 2026",
-    layout: "mobile",
-    image: "/projects/url-detector.png",
-    tags: ["Cybersecurity", "URL Analysis", "Validation", "Thesis Project"],
-    description:
-      "A thesis-based application to detect potentially malicious URLs using URL string characteristics and support safer browsing awareness.",
-    highlights: [
-      "Developed the workflow from URL input to detection result output.",
-      "Applied validation-oriented system design for security-related use cases.",
-      "Strengthened cybersecurity fundamentals through malicious URL detection research.",
-      "Documented the application as part of an academic thesis project.",
-    ],
-  },
   {
-    title: "QA Testing Projects - SauceDemo & Automation Exercise",
-    role: "Independent Projects | 2025",
+    title: "QA Testing Projects - AutomationExercise",
+    role: "Manual Testing | Independent Projects | 2025",
     layout: "desktop",
     image: "/projects/qa-testing.png",
     tags: ["Manual Testing", "API Testing", "Postman", "Trello", "Test Cases"],
@@ -242,7 +235,7 @@ const projects = [
   },
   {
     title: "Workshop Cashier & Inventory System",
-    role: "Python Developer | Client Project | 2026 - Ongoing",
+    role: "Python Developer | Client Project | 2026",
     layout: "desktop",
     image: "/projects/workshop-cashier.png",
     tags: [
@@ -260,6 +253,21 @@ const projects = [
       "Built product, category, stock-in, and cashier transaction workflows.",
       "Implemented sales validation, discount calculation, change calculation, and low-stock warning.",
       "Prepared the application for executable packaging using PyInstaller.",
+    ],
+  },
+  {
+    title: "URLDetector Application",
+    role: "Mobile Developer | Thesis Project | 2026",
+    layout: "mobile",
+    image: "/projects/url-detector.png",
+    tags: ["URL Analysis", "Validation", "Cybersecurity", "Thesis Project"],
+    description:
+      "A thesis-based application to detect potentially malicious URLs using URL string characteristics and support safer browsing awareness.",
+    highlights: [
+      "Developed the workflow from URL input to detection result output.",
+      "Applied validation-oriented system design for security-related use cases.",
+      "Strengthened cybersecurity fundamentals through malicious URL detection research.",
+      "Documented the application as part of an academic thesis project.",
     ],
   },
 ];
@@ -320,64 +328,67 @@ function ExperienceSection() {
       <SectionTitle
         eyebrow="Experience"
         title="Education, internship, and learning journey"
-        description="A summary of academic background, internship experience, certifications, and organizational activities aligned with IT development, banking operations, data monitoring, and software quality."
+        description="A journey of academic achievement, internship experience, professional development, and organizational involvement that reflects my commitment to continuous learning and growth in information technology."
       />
 
       <div className="mx-auto max-w-7xl space-y-8">
         <div className="space-y-5">
-          {experiences.map((item, index) => (
-            <article
+          <div className="space-y-6">
+            {experiences.map((item, index) => (
+              <article
                 key={`${item.title}-${item.organization}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-8 py-7 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-8 py-8 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
               >
-                {/* Background Glow */}
-                <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl transition duration-500 group-hover:bg-blue-300/20" />
+                <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
 
-                {/* Number */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-sm font-black text-blue-200">
-                  0{index + 1}
-                </div>
+                {/* HEADER */}
+                <div className="flex items-start justify-between gap-8">
 
-                {/* Header */}
-                <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
+                  {/* LEFT */}
+                  <div className="flex gap-6">
 
-                  <div>
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-lg font-bold text-blue-200">
+                      0{index + 1}
+                    </div>
 
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-                      {item.category}
-                    </p>
+                    <div>
 
-                    <h3 className="text-3xl font-bold text-white">
-                      {item.title}
-                    </h3>
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                        {item.category}
+                      </p>
 
-                    <p className="mt-2 text-lg text-slate-300">
-                      {item.organization} • {item.location}
-                    </p>
+                      <h3 className="text-3xl font-bold text-white">
+                        {item.title}
+                      </h3>
 
-                    {/* GPA pindah ke kiri */}
-                    {item.badge && (
-                      <div className="mt-3 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-sm font-medium text-blue-200">
-                        🎓 {item.badge}
-                      </div>
-                    )}
+                      <p className="mt-2 text-lg text-slate-300">
+                        {item.organization} • {item.location}
+                      </p>
+
+                      {item.badge && (
+                        <span className="mt-4 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-sm font-medium text-blue-100">
+                          {item.badge}
+                        </span>
+                      )}
+
+                    </div>
 
                   </div>
 
-                  {/* Period tetap kanan */}
-                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-sm font-medium text-slate-300">
+                  {/* RIGHT */}
+                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-5 py-2 text-sm font-medium text-slate-300 whitespace-nowrap">
                     {item.period}
                   </span>
 
                 </div>
 
-                {/* Content */}
+                {/* CONTENT */}
                 {item.image ? (
 
-                  <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-center">
+                  <div className="mt-8 grid items-center gap-10 lg:grid-cols-2">
 
-                    {/* Description */}
-                    <div className="flex-1">
+                    {/* LEFT */}
+                    <div>
 
                       <p className="text-lg leading-9 text-slate-300">
                         {item.description}
@@ -385,13 +396,13 @@ function ExperienceSection() {
 
                     </div>
 
-                    {/* Image */}
-                    <div className="w-full lg:w-[340px] shrink-0">
+                    {/* RIGHT */}
+                    <div>
 
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-[260px] w-full rounded-2xl object-cover border border-white/10 shadow-xl transition duration-300 group-hover:scale-[1.02]"
+                        className="mx-auto h-72 w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
                       />
 
                     </div>
@@ -400,18 +411,37 @@ function ExperienceSection() {
 
                 ) : (
 
-                  <div className="mx-auto max-w-4xl">
+                  <div className="mt-8">
 
-                    <p className="text-center text-lg leading-9 text-slate-300">
+                    <p className="text-lg leading-9 text-slate-300">
                       {item.description}
                     </p>
+
+                    <ul className="mt-6 grid gap-4 md:grid-cols-2">
+
+                      {item.points.map((point) => (
+
+                        <li
+                          key={point}
+                          className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-slate-300"
+                        >
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-300" />
+
+                          <span>{point}</span>
+
+                        </li>
+
+                      ))}
+
+                    </ul>
 
                   </div>
 
                 )}
 
               </article>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* <aside className="space-y-5"> */}
@@ -471,12 +501,6 @@ function ExperienceSection() {
                     <p className="mt-4 line-clamp-3 text-sm leading-6 text-slate-300">
                       {course.description}
                     </p>
-
-                    <div className="mt-5 border-t border-white/10 pt-3">
-                      <p className="text-xs text-slate-400">
-                        Click the certificate preview to open the full document.
-                      </p>
-                    </div>
 
                   </div>
                 </div>
@@ -898,58 +922,25 @@ export default function App() {
             </div>
 
             <div className="relative mt-4 rounded-2xl border border-white/10 bg-slate-950/80 p-4 transition duration-500 group-hover:border-blue-300/30 group-hover:bg-slate-950/90">
-              <div className="mb-3 flex items-center justify-between gap-3">
+              <div className="flex items-start justify-between">
                 <p className="text-sm font-semibold text-white">
                   IT Development Portfolio
                 </p>
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.7)]" />
               </div>
               <p className="text-sm text-slate-400">
-                Desktop App • Backend • Cybersecurity • QA Testing
+                • Data Analyst • QA Tester
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* <section
-        id="about"
-        className="relative z-10 border-y border-white/10 bg-white/[0.03] px-6 py-20"
-      >
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-300">
-              About Me
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-              Building practical systems with reliability, data, and security in
-              mind.
-            </h2>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 text-base leading-8 text-slate-300 shadow-2xl shadow-slate-950/20 transition duration-300 hover:-translate-y-1 hover:border-blue-300/30">
-            <p>
-              I enjoy developing applications that solve practical business
-              problems, especially systems involving transactions, data
-              management, validation, and user workflows. My project experience
-              includes a workshop cashier and inventory system, backend features
-              for a mobile pet-care app, a malicious URL detection thesis
-              project, and structured QA testing projects.
-            </p>
-            <p className="mt-4">
-              I am especially interested in digital banking technology, backend
-              development, database systems, cybersecurity fundamentals, and
-              software quality assurance.
-            </p>
-          </div>
-        </div>
-      </section> */}
-
       <section id="skills" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
         <SectionTitle
           eyebrow="Skills"
           title="Technical strengths"
-          description="A focused skill set across application development, backend tools, database systems, security awareness, and QA documentation."
+          description="Technical skills developed through academic projects, internships, and independent learning, with a focus on data analysis, information systems, software quality assurance, databases, and digital productivity tools."
         />
 
         <div className="grid gap-5 md:grid-cols-3">
@@ -979,8 +970,8 @@ export default function App() {
       >
         <SectionTitle
           eyebrow="Portfolio"
-          title="Featured projects"
-          description="Selected academic, client, team, and independent projects that show development, backend, cybersecurity, database, and QA fundamentals."
+          title="Featured Projects"
+          description="A collection of academic and independent projects demonstrating practical experience in information systems, data analytics, software quality assurance, desktop application development, and cybersecurity."
         />
 
         <ProjectCarousel />
@@ -992,8 +983,8 @@ export default function App() {
       >
         <SectionTitle
           eyebrow="Contact"
-          title="Let’s connect"
-          description="Feel free to reach out for IT development, backend, QA, cybersecurity-related opportunities, or graduate development programs."
+          title="Let's Connect"
+          description="I'm always open to discussing entry-level opportunities, internships, graduate programs, and collaborations in information systems, data analytics, software quality assurance, and technology."
         />
 
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
