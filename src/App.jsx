@@ -323,7 +323,7 @@ function SmartImage({ src, alt, className, fallbackClassName, fallbackText }) {
 
 function ExperienceSection() {
   return (
-    <section
+    <div
       id="experience"
       className="relative z-10 border-y border-white/10 bg-white/[0.025] px-6 py-20"
     >
@@ -382,7 +382,7 @@ function ExperienceSection() {
                 </span>
 
               </div>
-
+      
               {/* ================= CONTENT ================= */}
               {item.image ? (
 
@@ -506,9 +506,9 @@ function ExperienceSection() {
                 </div>
               ))}
             </div>
-            
+          </div>
         </div>
-
+      
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-8 shadow-2xl shadow-slate-950/25">
 
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
@@ -691,10 +691,9 @@ function ExperienceSection() {
             ))}
 
           </div>
-
-        </div>        
-      </div> 
-    </section>
+        </div>       
+      
+      </div>
   );
 }
 
