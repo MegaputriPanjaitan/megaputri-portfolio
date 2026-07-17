@@ -389,7 +389,7 @@ function ExperienceSection() {
                 <div className="mt-6 grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
 
                   {/* DESCRIPTION */}
-                  <div className="flex h-full items-center">
+                  <div className="flex h-full items-center pl-8">
 
                     <p className="text-lg leading-9 text-slate-300">
                       {item.description}
@@ -398,7 +398,7 @@ function ExperienceSection() {
                   </div>
 
                   {/* IMAGE */}
-                  <div className="flex justify-center">
+                  <div className="flex justify-center -mt-4">
 
                     <img
                       src={item.image}
