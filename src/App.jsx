@@ -44,10 +44,12 @@ const skills = [
     "GitHub",
     "Visual Studio Code",
     "Android Studio",
-    "Google Colab"
+    "Google Colab",
+    "PySide6"
   ],
 }
 ];
+
 
 const experiences = [
   {
@@ -402,7 +404,7 @@ function ExperienceSection() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="mx-auto h-72 w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
+                        className="mx-auto h-96 w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
                       />
 
                     </div>
@@ -533,6 +535,7 @@ function ExperienceSection() {
                 className="rounded-3xl border border-white/10 bg-slate-950/40 p-6 transition-all duration-300 hover:border-blue-400/40"
               >
 
+                {/* Header */}
                 <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
 
                   <div>
@@ -553,45 +556,136 @@ function ExperienceSection() {
 
                 </div>
 
-                <p className="mt-5 text-sm leading-7 text-slate-300">
-                  {item.description}
-                </p>
+                {/* ===================== */}
+                {/* BEM (1 Certificate) */}
+                {/* ===================== */}
 
-                <div className="mt-6">
+                {item.certificates.length === 1 ? (
 
-                  <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
-                    Certificates
-                  </h5>
+                  <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-center">
 
-                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* Left */}
+                    <div>
 
-                    {item.certificates.map((certificate, index) => (
+                      <p className="text-sm leading-7 text-slate-300">
+                        {item.description}
+                      </p>
 
-                      <a
-                        key={index}
-                        href={certificate.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
-                      >
+                      <ul className="mt-6 space-y-3 text-sm text-slate-300">
 
-                        <div className="flex h-60 items-center justify-center p-4">
+                        <li className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                          Organized faculty and student development programs.
+                        </li>
 
-                          <img
-                            src={certificate.thumbnail}
-                            alt={`${item.title} Certificate ${index + 1}`}
-                            className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                          />
+                        <li className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                          Collaborated with multidisciplinary student committees.
+                        </li>
 
-                        </div>
+                        <li className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                          Strengthened leadership, teamwork, and communication skills.
+                        </li>
 
-                      </a>
+                      </ul>
 
-                    ))}
+                    </div>
+
+                    {/* Right */}
+                    <a
+                      href={item.certificates[0].pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition hover:-translate-y-1 hover:border-blue-400"
+                    >
+
+                      <div className="flex h-72 items-center justify-center p-4">
+
+                        <img
+                          src={item.certificates[0].thumbnail}
+                          alt={item.title}
+                          className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                        />
+
+                      </div>
+
+                    </a>
 
                   </div>
 
-                </div>
+                ) : (
+
+                  <>
+                    {/* Committee */}
+
+                    <p className="mt-5 text-sm leading-7 text-slate-300">
+                      {item.description}
+                    </p>
+
+                    <ul className="mt-6 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+
+                      <li className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                        Assisted event planning and execution.
+                      </li>
+
+                      <li className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                        Coordinated participant registration and administration.
+                      </li>
+
+                      <li className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                        Worked collaboratively with student committees.
+                      </li>
+
+                      <li className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
+                        Improved teamwork, communication, and organizational skills.
+                      </li>
+
+                    </ul>
+
+                    <div className="mt-8">
+
+                      <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                        Certificates
+                      </h5>
+
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+                        {item.certificates.map((certificate, index) => (
+
+                          <a
+                            key={index}
+                            href={certificate.pdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+                          >
+
+                            <div className="flex h-56 items-center justify-center p-4">
+
+                              <img
+                                src={certificate.thumbnail}
+                                alt={`${item.title} Certificate ${index + 1}`}
+                                className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                              />
+
+                            </div>
+
+                          </a>
+
+                        ))}
+
+                      </div>
+
+                    </div>
+
+                  </>
+
+                )}
 
               </div>
 
