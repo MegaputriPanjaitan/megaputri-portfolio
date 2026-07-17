@@ -339,15 +339,16 @@ function ExperienceSection() {
             {experiences.map((item, index) => (
               <article
                 key={`${item.title}-${item.organization}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-6 py-6 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-10 py-7 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
               >
+                {/* Background Glow */}
                 <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
 
-                {/* HEADER */}
-                <div className="flex items-start justify-between gap-8">
+                {/* ================= HEADER ================= */}
+                <div className="flex items-start justify-between gap-10">
 
                   {/* LEFT */}
-                  <div className="flex gap-4">
+                  <div className="flex gap-5">
 
                     <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-lg font-bold text-blue-200">
                       0{index + 1}
@@ -378,19 +379,19 @@ function ExperienceSection() {
                   </div>
 
                   {/* RIGHT */}
-                  <span className="rounded-full border border-white/10 bg-slate-950/60 px-5 py-2 text-sm font-medium text-slate-300 whitespace-nowrap">
+                  <span className="whitespace-nowrap rounded-full border border-white/10 bg-slate-950/60 px-5 py-2 text-sm font-medium text-slate-300">
                     {item.period}
                   </span>
 
                 </div>
 
-                {/* CONTENT */}
+                {/* ================= CONTENT ================= */}
                 {item.image ? (
 
-                  <div className="mt-6 grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+                  <div className="mt-8 grid items-center gap-5 lg:grid-cols-[1.2fr_0.8fr]">
 
-                    {/* LEFT */}
-                    <div className="max-w-xl">
+                    {/* DESCRIPTION */}
+                    <div>
 
                       <p className="text-lg leading-9 text-slate-300">
                         {item.description}
@@ -398,13 +399,13 @@ function ExperienceSection() {
 
                     </div>
 
-                    {/* RIGHT */}
-                    <div>
+                    {/* IMAGE */}
+                    <div className="flex justify-end">
 
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="mx-auto h-[360px] w-full max-w-lg rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
+                        className="h-[430px] w-[360px] rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
                       />
 
                     </div>
@@ -427,6 +428,7 @@ function ExperienceSection() {
                           key={point}
                           className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-slate-300"
                         >
+
                           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-300" />
 
                           <span>{point}</span>
@@ -445,6 +447,7 @@ function ExperienceSection() {
             ))}
           </div>
         </div>
+      </div>
 
         {/* <aside className="space-y-5"> */}
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
