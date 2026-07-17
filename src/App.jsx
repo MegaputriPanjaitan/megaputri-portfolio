@@ -508,7 +508,7 @@ function ExperienceSection() {
             </div>
           </div>
         </div>
-      
+      <div className="mx-auto max-w-7xl">
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
 
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
@@ -521,7 +521,7 @@ function ExperienceSection() {
 
           <p className="mt-2 text-sm leading-6 text-slate-400">
             Organizational and committee experiences that strengthened leadership,
-            teamwork, communication, and project coordination skills throughout my
+            teamwork, communication, and project coordination throughout my
             university journey.
           </p>
 
@@ -534,7 +534,7 @@ function ExperienceSection() {
                 className="rounded-3xl border border-white/10 bg-slate-950/40 p-5 transition-all duration-300 hover:border-blue-400/40"
               >
 
-                {/* Header */}
+                {/* HEADER */}
                 <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
 
                   <div>
@@ -556,21 +556,21 @@ function ExperienceSection() {
                 </div>
 
                 {/* ===================== */}
-                {/* BEM (1 Certificate) */}
+                {/* BEM */}
                 {/* ===================== */}
 
                 {item.certificates.length === 1 ? (
 
-                  <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-center">
+                  <div className="mt-6 grid items-center gap-6 lg:grid-cols-[1.4fr_0.6fr]">
 
-                    {/* Left */}
+                    {/* DESCRIPTION */}
                     <div>
 
                       <p className="text-sm leading-7 text-slate-300">
                         {item.description}
                       </p>
 
-                      <ul className="mt-6 space-y-3 text-sm text-slate-300">
+                      <ul className="mt-5 space-y-3 text-sm text-slate-300">
 
                         <li className="flex gap-3">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
@@ -584,45 +584,50 @@ function ExperienceSection() {
 
                         <li className="flex gap-3">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
-                          Strengthened leadership, teamwork, and communication skills.
+                          Strengthened leadership, teamwork, communication, and project coordination.
                         </li>
 
                       </ul>
 
                     </div>
 
-                    {/* Right */}
-                    <a
-                      href={item.certificates[0].pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition hover:-translate-y-1 hover:border-blue-400"
-                    >
+                    {/* CERTIFICATE */}
+                    <div className="flex justify-center">
 
-                      <div className="flex h-72 items-center justify-center p-4">
+                      <a
+                        href={item.certificates[0].pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group overflow-hidden rounded-2xl border border-white/10 bg-white transition hover:-translate-y-1 hover:border-blue-400"
+                      >
 
-                        <img
-                          src={item.certificates[0].thumbnail}
-                          alt={item.title}
-                          className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
-                        />
+                        <div className="flex h-60 w-56 items-center justify-center p-3">
 
-                      </div>
+                          <img
+                            src={item.certificates[0].thumbnail}
+                            alt={item.title}
+                            className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                          />
 
-                    </a>
+                        </div>
+
+                      </a>
+
+                    </div>
 
                   </div>
 
                 ) : (
 
                   <>
-                    {/* Committee */}
+
+                    {/* DESCRIPTION */}
 
                     <p className="mt-5 text-sm leading-7 text-slate-300">
                       {item.description}
                     </p>
 
-                    <ul className="mt-6 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+                    <ul className="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
 
                       <li className="flex gap-3">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" />
@@ -646,7 +651,7 @@ function ExperienceSection() {
 
                     </ul>
 
-                    <div className="mt-8">
+                    <div className="mt-6">
 
                       <h5 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
                         Certificates
@@ -691,9 +696,10 @@ function ExperienceSection() {
             ))}
 
           </div>
-        </div>       
-      
+
+        </div>
       </div>
+    </div>
   );
 }
 
