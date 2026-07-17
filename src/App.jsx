@@ -443,9 +443,8 @@ function ExperienceSection() {
             </article>
           ))}
         </div>
-      </div>
-
-        {/* <aside className="space-y-5"> */}
+      
+        
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
               Courses & Certifications
@@ -507,6 +506,7 @@ function ExperienceSection() {
                 </div>
               ))}
             </div>
+            
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-8 shadow-2xl shadow-slate-950/25">
@@ -692,9 +692,8 @@ function ExperienceSection() {
 
           </div>
 
-        </div>
-        {/* </aside> */}
-      {/* </div> */}
+        </div>        
+      </div> 
     </section>
   );
 }
