@@ -389,7 +389,7 @@ function ExperienceSection() {
                 <div className="mt-6 grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
 
                   {/* DESCRIPTION */}
-                  <div className="flex h-full items-center pl-8">
+                  <div className="flex h-full items-center pl-12">
 
                     <p className="text-lg leading-9 text-slate-300">
                       {item.description}
@@ -398,7 +398,7 @@ function ExperienceSection() {
                   </div>
 
                   {/* IMAGE */}
-                  <div className="flex justify-center -mt-4">
+                  <div className="flex justify-center -mt-8">
 
                     <img
                       src={item.image}
@@ -525,13 +525,13 @@ function ExperienceSection() {
             university journey.
           </p>
 
-          <div className="mt-8 space-y-8">
+          <div className="mt-6 space-y-6">
 
             {organizations.map((item) => (
 
               <div
                 key={item.title}
-                className="rounded-3xl border border-white/10 bg-slate-950/40 p-6 transition-all duration-300 hover:border-blue-400/40"
+                className="rounded-3xl border border-white/10 bg-slate-950/40 p-5 transition-all duration-300 hover:border-blue-400/40"
               >
 
                 {/* Header */}
