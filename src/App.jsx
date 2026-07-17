@@ -339,7 +339,7 @@ function ExperienceSection() {
             {experiences.map((item, index) => (
               <article
                 key={`${item.title}-${item.organization}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-8 py-8 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-8 py-6 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
               >
                 <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
 
@@ -387,7 +387,7 @@ function ExperienceSection() {
                 {/* CONTENT */}
                 {item.image ? (
 
-                  <div className="mt-8 grid items-center gap-10 lg:grid-cols-2">
+                  <div className="mt-6 grid items-center gap-6 lg:grid-cols-2">
 
                     {/* LEFT */}
                     <div>
@@ -404,7 +404,7 @@ function ExperienceSection() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="mx-auto h-96 w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
+                        className="mx-auto h-72 w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
                       />
 
                     </div>
@@ -1030,7 +1030,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="skills" className="relative z-10 mx-auto max-w-6xl px-6 py-20">
+      <section id="skills" className="relative z-10 mx-auto max-w-6xl px-6 py-14">
         <SectionTitle
           eyebrow="Skills"
           title="Technical strengths"
