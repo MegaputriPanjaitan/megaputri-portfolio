@@ -334,120 +334,116 @@ function ExperienceSection() {
       />
 
       <div className="mx-auto max-w-7xl space-y-8">
-        <div className="space-y-5">
-          <div className="space-y-6">
-            {experiences.map((item, index) => (
-              <article
-                key={`${item.title}-${item.organization}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-10 py-7 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
-              >
-                {/* Background Glow */}
-                <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
+  <div className="space-y-6">
+    {experiences.map((item, index) => (
+      <article
+        key={`${item.title}-${item.organization}`}
+        className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] px-14 py-6 shadow-2xl shadow-slate-950/25 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300/35 hover:bg-white/[0.07]"
+      >
+        <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-blue-400/10 blur-3xl" />
 
-                {/* ================= HEADER ================= */}
-                <div className="flex items-start justify-between gap-10">
+        {/* ================= HEADER ================= */}
+        <div className="flex items-start justify-between">
 
-                  {/* LEFT */}
-                  <div className="flex gap-5">
+          {/* LEFT */}
+          <div className="flex gap-5">
 
-                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-lg font-bold text-blue-200">
-                      0{index + 1}
-                    </div>
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-blue-300/25 bg-blue-300/10 text-lg font-bold text-blue-200">
+              0{index + 1}
+            </div>
 
-                    <div>
+            <div>
 
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
-                        {item.category}
-                      </p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                {item.category}
+              </p>
 
-                      <h3 className="text-3xl font-bold text-white">
-                        {item.title}
-                      </h3>
+              <h3 className="text-3xl font-bold text-white">
+                {item.title}
+              </h3>
 
-                      <p className="mt-2 text-lg text-slate-300">
-                        {item.organization} • {item.location}
-                      </p>
+              <p className="mt-2 text-lg text-slate-300">
+                {item.organization} • {item.location}
+              </p>
 
-                      {item.badge && (
-                        <span className="mt-4 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-sm font-medium text-blue-100">
-                          {item.badge}
-                        </span>
-                      )}
+              {item.badge && (
+                <span className="mt-4 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1 text-sm font-medium text-blue-100">
+                  {item.badge}
+                </span>
+              )}
 
-                    </div>
+            </div>
 
-                  </div>
-
-                  {/* RIGHT */}
-                  <span className="whitespace-nowrap rounded-full border border-white/10 bg-slate-950/60 px-5 py-2 text-sm font-medium text-slate-300">
-                    {item.period}
-                  </span>
-
-                </div>
-
-                {/* ================= CONTENT ================= */}
-                {item.image ? (
-
-                  <div className="mt-8 grid items-center gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-
-                    {/* DESCRIPTION */}
-                    <div>
-
-                      <p className="text-lg leading-9 text-slate-300">
-                        {item.description}
-                      </p>
-
-                    </div>
-
-                    {/* IMAGE */}
-                    <div className="flex justify-end">
-
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="h-[430px] w-[360px] rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
-                      />
-
-                    </div>
-
-                  </div>
-
-                ) : (
-
-                  <div className="mt-8">
-
-                    <p className="text-lg leading-9 text-slate-300">
-                      {item.description}
-                    </p>
-
-                    <ul className="mt-6 grid gap-4 md:grid-cols-2">
-
-                      {item.points.map((point) => (
-
-                        <li
-                          key={point}
-                          className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-slate-300"
-                        >
-
-                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-300" />
-
-                          <span>{point}</span>
-
-                        </li>
-
-                      ))}
-
-                    </ul>
-
-                  </div>
-
-                )}
-
-              </article>
-            ))}
           </div>
+
+          {/* RIGHT */}
+          <span className="whitespace-nowrap rounded-full border border-white/10 bg-slate-950/60 px-5 py-2 text-sm font-medium text-slate-300">
+            {item.period}
+          </span>
+
         </div>
-      </div>
+
+        {/* ================= CONTENT ================= */}
+        {item.image ? (
+
+          <div className="mt-6 grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+
+            {/* DESCRIPTION */}
+            <div className="flex h-full items-center">
+
+              <p className="text-lg leading-9 text-slate-300">
+                {item.description}
+              </p>
+
+            </div>
+
+            {/* IMAGE */}
+            <div className="flex justify-center">
+
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-[420px] w-[430px] rounded-2xl border border-white/10 object-cover shadow-xl transition duration-300 group-hover:scale-[1.02]"
+              />
+
+            </div>
+
+          </div>
+
+        ) : (
+
+          <div className="mt-8">
+
+            <p className="text-lg leading-9 text-slate-300">
+              {item.description}
+            </p>
+
+            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+
+              {item.points.map((point) => (
+
+                <li
+                  key={point}
+                  className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-4 text-slate-300"
+                >
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-300" />
+
+                  <span>{point}</span>
+
+                </li>
+
+              ))}
+
+            </ul>
+
+          </div>
+
+        )}
+
+      </article>
+    ))}
+  </div>
+</div>
 
         {/* <aside className="space-y-5"> */}
         <div className="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-slate-950/25 transition duration-300 hover:border-blue-300/30">
