@@ -774,12 +774,6 @@ function ProjectSlide({ project, index }) {
 
               <div className="flex flex-col items-end gap-2">
 
-                <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-xs font-semibold text-slate-300">
-                  {project.layout === "mobile"
-                    ? "Mobile-style Preview"
-                    : "Desktop/Web Preview"}
-                </span>
-
                 <span className="text-xs font-medium text-blue-300 opacity-0 transition-all duration-300 group-hover:opacity-100">
                   View Repository ↗
                 </span>
@@ -969,7 +963,7 @@ export default function App() {
         <div className="absolute left-10 top-1/3 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
       </div>
 
-      <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+      <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#home" className="text-lg font-bold tracking-tight text-white">
           Megaputri<span className="text-blue-300">.</span>
         </a>
@@ -995,11 +989,11 @@ export default function App() {
 
       <section
         id="home"
-        className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-20 pt-16 md:grid-cols-[1.1fr_0.9fr] md:pb-28 md:pt-24"
+        className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-20 pt-8 md:grid-cols-[1.1fr_0.9fr] md:pb-28 md:pt-12"
       >
         <div className="fade-up text-center md:text-left">
           <div className="mb-6 inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-2 text-sm font-medium text-blue-100 shadow-lg shadow-blue-400/10">
-            Open to IT Development Program opportunities
+            Open Opportunities in Data, Information Systems and Software.
           </div>
 
           <h1 className="max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">
@@ -1118,14 +1112,14 @@ export default function App() {
 
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <a
-            className="rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-blue-100"
+            className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-400 hover:text-slate-950"
             href={`mailto:${profile.email}`}
           >
             Email Me
           </a>
 
           <a
-            className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-white/10"
+            className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-400 hover:text-slate-950"
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
@@ -1134,7 +1128,7 @@ export default function App() {
           </a>
 
           <a
-            className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-white/10"
+            className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-400 hover:text-slate-950"
             href={profile.github}
             target="_blank"
             rel="noreferrer"
@@ -1142,6 +1136,10 @@ export default function App() {
             GitHub
           </a>
         </div>
+
+        <p className="mt-6 text-sm text-white/90">
+        Based in Medan, Indonesia • Open to relocation, remote, and hybrid opportunities.
+        </p>
 
         <p className="mt-8 text-sm text-slate-500">
           © 2026 Megaputri Nathalina. Built with React, Vite, and Tailwind CSS.
