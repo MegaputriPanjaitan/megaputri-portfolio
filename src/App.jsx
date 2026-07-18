@@ -201,6 +201,7 @@ const projects = [
   role: "Data Analyst & System Developer | Independent Project | 2026",
   layout: "desktop",
   image: "/projects/north-sumatra-information-system.png",
+  github:"https://github.com/MegaputriPanjaitan/north-sumatra-socioeconomic-information-system",
   tags: [
     "Python",
     "SQL",
@@ -225,6 +226,7 @@ const projects = [
     role: "Manual Testing | Independent Projects | 2025",
     layout: "desktop",
     image: "/projects/qa-testing.png",
+    github:"https://github.com/MegaputriPanjaitan/qa-automation-exercise-ui-api",
     tags: ["Manual Testing", "API Testing", "Postman", "Trello", "Test Cases"],
     description:
       "Manual UI and API testing projects covering authentication, product/search, cart, checkout, subscription, contact, and selected API modules.",
@@ -240,6 +242,7 @@ const projects = [
     role: "Python Developer | Client Project | 2026",
     layout: "desktop",
     image: "/projects/workshop-cashier.png",
+    github:"https://github.com/MegaputriPanjaitan/KasirBengkel_Python",
     tags: [
       "Python",
       "PySide6",
@@ -263,6 +266,7 @@ const projects = [
     layout: "mobile",
     image: "/projects/url-detector.png",
     tags: ["URL Analysis", "Validation", "Cybersecurity", "Thesis Project"],
+    github:"https://github.com/MegaputriPanjaitan/mobile_URLdetector_NLP",
     description:
       "A thesis-based application to detect potentially malicious URLs using URL string characteristics and support safer browsing awareness.",
     highlights: [
@@ -707,80 +711,108 @@ function ProjectSlide({ project, index }) {
   const isMobileLayout = project.layout === "mobile";
 
   return (
-    <article className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-md transition-all duration-500 md:p-8">
-      <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blue-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-16 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent" />
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block group"
+    >
+      <article className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-blue-400/40 hover:shadow-blue-500/20 md:p-8">
+        <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blue-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent" />
 
-      <div
-        className={
-          isMobileLayout
-            ? "relative grid gap-8 lg:grid-cols-[0.56fr_1.44fr] lg:items-center"
-            : "relative space-y-7"
-        }
-      >
         <div
           className={
             isMobileLayout
-              ? "flex justify-center lg:justify-start"
-              : "overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-inner shadow-slate-950/40"
+              ? "relative grid gap-8 lg:grid-cols-[0.56fr_1.44fr] lg:items-center"
+              : "relative space-y-7"
           }
         >
-          <SmartImage
-            src={project.image}
-            alt={`${project.title} screenshot`}
+          {/* IMAGE */}
+          <div
             className={
               isMobileLayout
-                ? "max-h-[520px] w-auto object-contain drop-shadow-[0_24px_55px_rgba(0,0,0,0.45)] transition duration-500 hover:scale-[1.03]"
-                : "max-h-[430px] w-full object-contain transition duration-500 hover:scale-[1.015]"
+                ? "flex justify-center lg:justify-start"
+                : "overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-inner shadow-slate-950/40"
             }
-            fallbackClassName={
-              isMobileLayout
-                ? "flex min-h-72 w-52 items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.04] px-6 py-16 text-center text-sm font-semibold text-slate-400"
-                : "flex min-h-72 w-full items-center justify-center bg-gradient-to-br from-slate-800 to-slate-950 px-6 py-16 text-center text-sm font-semibold text-slate-400"
-            }
-            fallbackText="Project screenshot preview"
-          />
-        </div>
-
-        <div className="relative">
-          <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <p className="mb-2 text-sm font-semibold text-blue-300">
-                0{index + 1} / 0{projects.length}
-              </p>
-              <h3 className="text-2xl font-bold text-white md:text-3xl">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-400">{project.role}</p>
-            </div>
-
-            <div className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-xs font-semibold text-slate-300">
-              {project.layout === "mobile" ? "Mobile-style Preview" : "Desktop/Web Preview"}
-            </div>
+          >
+            <SmartImage
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              className={
+                isMobileLayout
+                  ? "max-h-[520px] w-auto object-contain drop-shadow-[0_24px_55px_rgba(0,0,0,0.45)] transition duration-500 group-hover:scale-[1.03]"
+                  : "max-h-[430px] w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+              }
+              fallbackClassName={
+                isMobileLayout
+                  ? "flex min-h-72 w-52 items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.04] px-6 py-16 text-center text-sm font-semibold text-slate-400"
+                  : "flex min-h-72 w-full items-center justify-center bg-gradient-to-br from-slate-800 to-slate-950 px-6 py-16 text-center text-sm font-semibold text-slate-400"
+              }
+              fallbackText="Project screenshot preview"
+            />
           </div>
 
-          <p className="max-w-3xl text-sm leading-7 text-slate-300 md:text-[15px]">
-            {project.description}
-          </p>
+          {/* CONTENT */}
+          <div className="relative">
+            <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <Pill key={tag}>{tag}</Pill>
-            ))}
+              <div>
+                <p className="mb-2 text-sm font-semibold text-blue-300">
+                  0{index + 1} / 0{projects.length}
+                </p>
+
+                <h3 className="text-2xl font-bold text-white transition-colors duration-300 group-hover:text-blue-300 md:text-3xl">
+                  {project.title}
+                </h3>
+
+                <p className="mt-2 text-sm text-slate-400">
+                  {project.role}
+                </p>
+              </div>
+
+              <div className="flex flex-col items-end gap-2">
+
+                <span className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-xs font-semibold text-slate-300">
+                  {project.layout === "mobile"
+                    ? "Mobile-style Preview"
+                    : "Desktop/Web Preview"}
+                </span>
+
+                <span className="text-xs font-medium text-blue-300 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  View Repository ↗
+                </span>
+
+              </div>
+
+            </div>
+
+            <p className="max-w-3xl text-sm leading-7 text-slate-300 md:text-[15px]">
+              {project.description}
+            </p>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <Pill key={tag}>{tag}</Pill>
+              ))}
+            </div>
+
+            <ul className="mt-6 grid gap-3 text-sm leading-6 text-slate-300 md:grid-cols-2">
+              {project.highlights.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-3"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-300" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <ul className="mt-6 grid gap-3 text-sm leading-6 text-slate-300 md:grid-cols-2">
-            {project.highlights.map((item) => (
-              <li key={item} className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/35 p-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-300" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
-      </div>
-    </article>
+      </article>
+    </a>
   );
 }
 
